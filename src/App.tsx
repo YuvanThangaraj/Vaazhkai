@@ -435,7 +435,7 @@ export default function App() {
               <Arrow diagonal />
             </a>
             <a
-              href={wa}
+              href="https://chat.whatsapp.com/EbySqlwdSoH4ucUUTFyGB6"
               {...ext}
             >
               <span>Foster / Adopt</span>
