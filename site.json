@@ -1,0 +1,11 @@
+{
+  "description": "Vaazhkai is a student-led community in Chennai helping people understand, care for and protect community animals.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "title": "Vaazhkai"
+}
