@@ -759,47 +759,12 @@ h2 {
   object-position: center 54%;
 }
 
-.gallery-fieldwork {
-  align-items: center;
-  background: var(--sand);
-  border-radius: 24px;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
+.gallery-face {
+  object-position: center 85%;
 }
 
-.gallery-fieldwork .gallery-line {
-  background: var(--brown);
-  height: 1px;
-  opacity: 0.5;
-  width: 72px;
-}
-
-.gallery-fieldwork .paw-mark {
-  color: var(--brown);
-  transform: scale(1.8) rotate(-8deg);
-}
-
-.gallery-mark {
-  align-items: center;
-  background: var(--green);
-  border-radius: 24px;
-  color: var(--paper);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  justify-content: center;
-}
-
-.gallery-mark .paw-mark {
-  transform: scale(2.5);
-}
-
-.gallery-mark span {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  margin-top: 22px;
-  text-transform: uppercase;
+.gallery-litter {
+  object-position: center 62%;
 }
 
 .community {
@@ -905,13 +870,8 @@ h2 {
   align-items: end;
   display: grid;
   gap: 30px;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 1fr auto;
   margin-bottom: 65px;
-}
-
-.instagram-heading > .social-icon {
-  height: 48px;
-  width: 48px;
 }
 
 .instagram-heading h2 {
@@ -922,8 +882,8 @@ h2 {
 .instagram-grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1.2fr 0.8fr 0.8fr;
-  grid-template-rows: 280px 280px;
+  grid-auto-rows: 280px;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
 }
 
 .instagram-grid > * {
@@ -937,34 +897,8 @@ h2 {
   object-fit: contain;
 }
 
-.instagram-grid > img:nth-child(2) {
-  object-position: center 32%;
-}
-
-.instagram-grid > img:nth-child(3) {
-  grid-row: span 2;
-  object-position: center 50%;
-}
-
-.instagram-grid > a:last-child {
-  align-items: center;
-  background: var(--brown);
-  color: var(--paper);
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  justify-content: center;
-}
-
-.instagram-grid > a:last-child .social-icon {
-  height: 36px;
-  width: 36px;
-}
-
-.instagram-grid > a:last-child span {
-  font-size: 10px;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+.instagram-photo {
+  object-position: center 22%;
 }
 
 .instagram-visual {
@@ -973,31 +907,41 @@ h2 {
   justify-content: center;
 }
 
-.instagram-visual-paw {
+.social-tile {
+  align-items: center;
+  background: var(--brown);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  justify-content: center;
+  padding: 0 14px;
+  text-align: center;
+}
+
+.social-tile .social-icon {
+  height: 36px;
+  width: 36px;
+}
+
+.social-tile span {
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.social-linkedin {
   background: var(--sand);
   color: var(--brown);
 }
 
-.instagram-visual-paw .paw-mark {
-  transform: scale(2.8) rotate(-8deg);
+.social-facebook {
+  background: var(--forest);
 }
 
-.instagram-visual-lines {
+.social-website {
   background: var(--paper);
-  flex-direction: column;
-  gap: 13px;
-}
-
-.instagram-visual-lines span {
-  background: var(--green);
-  display: block;
-  height: 1px;
-  opacity: 0.65;
-  width: 40%;
-}
-
-.instagram-visual-lines span:nth-child(2) {
-  width: 58%;
+  color: var(--forest);
 }
 
 .instagram-visual-heart {
@@ -1147,8 +1091,9 @@ footer {
     grid-row: auto;
   }
 
-  .gallery-mark {
-    min-height: 250px;
+  .gallery-litter {
+    grid-column: 1 / -1;
+    height: 360px;
   }
 }
 
@@ -1284,6 +1229,11 @@ footer {
     grid-column: 1 / -1;
   }
 
+  .gallery-litter {
+    grid-column: auto;
+    height: 100%;
+  }
+
   .community {
     margin: 0 8px;
     padding: 70px 24px;
@@ -1295,19 +1245,11 @@ footer {
 
   .instagram-heading {
     align-items: start;
-    grid-template-columns: 48px 1fr;
-  }
-
-  .instagram-heading > a {
-    grid-column: 2;
+    grid-template-columns: 1fr;
   }
 
   .instagram-grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .instagram-grid > img:nth-child(3) {
-    grid-row: auto;
   }
 
   .involved-grid .involved-primary {
@@ -1451,8 +1393,9 @@ footer {
     font-size: 52px;
   }
 
-  .gallery-mark {
-    min-height: 250px;
+  .stories-gallery > .gallery-face,
+  .stories-gallery > .gallery-litter {
+    height: 360px;
   }
 
   .community {
@@ -1483,16 +1426,12 @@ footer {
   .instagram-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 230px);
+    grid-auto-rows: 230px;
   }
 
   .instagram-grid > img:first-child {
     grid-column: 1 / -1;
     grid-row: auto;
-  }
-
-  .instagram-grid > a:last-child {
-    grid-column: 1 / -1;
   }
 
   .involved-grid {
