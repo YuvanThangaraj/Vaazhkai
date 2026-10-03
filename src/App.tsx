@@ -13,9 +13,13 @@ import communityCat from "./assets/community-cat.jpg"
 import blackWhiteDog from "./assets/community-black-white-dog.jpg"
 import horsePhoto from "./assets/community-horse.jpg"
 import careDog from "./assets/community-care-dog.jpg"
+import tongueDog from "./assets/vaazhkai-dog.jpg"
 
 // External links open in a new tab, safely.
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const
+
+const facebookUrl = "https://www.facebook.com/profile.php?id=61594953604868"
+const websiteUrl = "https://vaazhkai.vercel.app"
 
 const Arrow = ({ diagonal = false }: { diagonal?: boolean }) => (
   <svg
@@ -46,6 +50,21 @@ const LinkedInIcon = () => (
   <svg className="social-icon" viewBox="0 0 24 24" aria-hidden="true">
     <rect x="3" y="3" width="18" height="18" rx="2" />
     <path d="M7.5 10v7M7.5 7v.1M11.2 17v-7m0 3c.7-2 5.3-2.2 5.3 1.4V17" />
+  </svg>
+)
+
+const FacebookIcon = () => (
+  <svg className="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M15 21v-6.5h2.2l.4-2.6H15v-1.6c0-.8.3-1.3 1.4-1.3h1.3V6.7c-.3 0-1-.2-1.8-.2-2 0-3.3 1.2-3.3 3.4v2H10.4v2.6h2.2V21" />
+  </svg>
+)
+
+const GlobeIcon = () => (
+  <svg className="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" />
+    <ellipse cx="12" cy="12" rx="4" ry="9" />
+    <path d="M3 12h18" />
   </svg>
 )
 
@@ -323,14 +342,16 @@ export default function App() {
             src={horsePhoto}
             alt="A brown horse standing among green foliage"
           />
-          <div className="gallery-fieldwork" aria-hidden="true">
-            <span className="gallery-line" />
-            <PawMark />
-          </div>
-          <div className="gallery-mark">
-            <PawMark />
-            <span>Chennai, India</span>
-          </div>
+          <img
+            className="gallery-face"
+            src={tongueDog}
+            alt="A cheerful community dog with its tongue out"
+          />
+          <img
+            className="gallery-litter"
+            src={kittensPhoto}
+            alt="A group of young kittens together in a box"
+          />
         </section>
 
         <section className="community" id="community">
@@ -369,8 +390,7 @@ export default function App() {
 
         <section className="instagram" id="instagram">
           <div className="instagram-heading">
-            <InstagramIcon />
-            <h2>See what we’re up to.</h2>
+            <h2>Find us online.</h2>
             <a
               href={ig}
               {...ext}
@@ -380,34 +400,52 @@ export default function App() {
           </div>
           <div className="instagram-grid" id="instagram-grid">
             <img src={comfortedDog} alt="A dog being comforted" />
-            <div
-              className="instagram-visual instagram-visual-paw"
-              aria-hidden="true"
-            >
-              <PawMark />
-            </div>
-            <div
-              className="instagram-visual instagram-visual-lines"
-              aria-hidden="true"
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-            <div
+            <a
               className="instagram-visual instagram-visual-heart"
-              aria-hidden="true"
+              href={ig}
+              aria-label="Vaazhkai on Instagram"
+              {...ext}
             >
-              <svg viewBox="0 0 24 24">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.8 4.8a5.5 5.5 0 0 0-7.8 0L12 5.9l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.3 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" />
               </svg>
-            </div>
+            </a>
+            <img
+              className="instagram-photo"
+              src={dogCloseup}
+              alt="A community dog looking directly at the camera"
+            />
             <a
+              className="social-tile"
               href={ig}
               {...ext}
             >
               <InstagramIcon />
               <span>Vaazhkai on Instagram</span>
+            </a>
+            <a
+              className="social-tile social-linkedin"
+              href={li}
+              {...ext}
+            >
+              <LinkedInIcon />
+              <span>Vaazhkai on LinkedIn</span>
+            </a>
+            <a
+              className="social-tile social-facebook"
+              href={facebookUrl}
+              {...ext}
+            >
+              <FacebookIcon />
+              <span>Vaazhkai on Facebook</span>
+            </a>
+            <a
+              className="social-tile social-website"
+              href={websiteUrl}
+              {...ext}
+            >
+              <GlobeIcon />
+              <span>Vaazhkai website</span>
             </a>
           </div>
         </section>
@@ -435,7 +473,7 @@ export default function App() {
               <Arrow diagonal />
             </a>
             <a
-              href="https://chat.whatsapp.com/EbySqlwdSoH4ucUUTFyGB6"
+              href={wa}
               {...ext}
             >
               <span>Foster / Adopt</span>
